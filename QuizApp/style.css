@@ -1,0 +1,61 @@
+html, body, .card{
+    height: 100vh;
+    background-color:beige;
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.title{
+    background:rgb(34, 168, 212);
+    display:flex;
+    align-items:center;
+}
+
+.number{
+    color:white;
+    margin-left:5rem;
+}
+
+ul{
+    list-style-type: none;
+    gap:0.5rem;
+    padding:0;
+ 
+    
+}
+
+li{
+    padding:1rem;
+    width: 32rem;
+    background-color:aqua;
+    margin-bottom:0.5rem;
+    color:white;
+    
+
+    
+}
+
+h1{
+    padding:1rem;
+    background:rgb(34, 168, 212);
+    color:white;
+}
+
+
+
+.buttons{
+    display:flex;
+    gap:1rem;
+    
+}
+
+button{
+    padding:0.4rem 0.8rem;
+}
+
