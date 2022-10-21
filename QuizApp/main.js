@@ -43,6 +43,7 @@ questions.push(q1);
 questions.push(q2);
 questions.push(q3);
 var count = 1;
+var correct = 0;
 
 
 start.addEventListener("click", ()=>{
@@ -62,8 +63,8 @@ start.addEventListener("click", ()=>{
     container.setAttribute("class", "card");
 
     buildQuestions(main, item);
-
-
+    console.log(count);
+    
   
     document.body.appendChild(main);
   
@@ -118,9 +119,9 @@ function buildQuestions(main, item){
                 if(e.target.textContent == item.answer){
                     console.log("It's equal");
                     e.target.style.backgroundColor ="green";
+                    correct ++;
                     option1.disabled=true;
-                   
-                    
+                        
                    
                 }
                 else{
@@ -136,17 +137,9 @@ function buildQuestions(main, item){
         option1.appendChild(textNode);
         answers.appendChild(option1);
 
-        console.log(option1.textContent);
-        console.log(item.answer);
-
-      
 
     }
 
-   
-
-   
-    
 
 
     var buttons = document.createElement("div");
@@ -163,6 +156,7 @@ function buildQuestions(main, item){
     next.addEventListener("click", ()=>{
         if(count < questions.length){
              count++;
+             console.log(count);
              item = questions.pop();
              questions.unshift(item);
              console.log("it's next.");
@@ -170,6 +164,27 @@ function buildQuestions(main, item){
              
              buildQuestions(main, item);
         }
+        else{
+            main.style.display = "none";
+            var result = document.createElement("div");
+            result.setAttribute("class", "correct");
+            var grade = document.createElement("p");
+            
+            grade.textContent = `The correct answers is ${correct} out of ${questions.length}`;
+            var pass = document.createElement("p");
+            
+            if(correct > questions.length * 0.6){
+                pass.textContent =`Congratulations !!! You passed the quiz`;
+            }
+            else{
+                pass.textContent = `Unfortunately, you failed but you can always try again.`;
+            }
+            result.appendChild(grade);
+            result.appendChild(pass);
+            document.body.appendChild(result);
+        }    
+
+       
     })
 
     prev.addEventListener("click", ()=>{
@@ -185,17 +200,7 @@ function buildQuestions(main, item){
         }
     })
 
-   options.forEach((option)=>{
-
-        option.addEventListener("click", ()=>{
-            console.log('option1 clicked');
-            console.log(option.textContent);
-            if(option.textContent === choice.answer){
-                option.classList.add("green");
-            }
-        })
-    })
-
+     
 
     
 
