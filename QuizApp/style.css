@@ -3,7 +3,7 @@ html, body, .card{
     background-color:beige;
 }
 
-.card{
+main, .card{
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -33,12 +33,22 @@ ul{
 li{
     padding:1rem;
     width: 32rem;
-    background-color:aqua;
+    background-color:rgb(85, 45, 177);
     margin-bottom:0.5rem;
     color:white;
-    
+      
+}
 
-    
+/*li:hover{
+    background:green;
+}*/
+
+.green{
+    background: green;
+}
+
+.red{
+    background:red;
 }
 
 h1{
