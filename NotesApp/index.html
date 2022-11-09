@@ -10,11 +10,25 @@
 </head>
 <body>
 
+    <div class="newNote">
+        <form action="#" id="note" class="modal-content">
+          <label for="title">title</label>
+          <input type="text" class="title" name="head" required>
+          <label for="textarea">Description</label>
+          <textarea name="noteContent" cols="20" rows="8" class="textarea" required></textarea>
+          <hr class="hr">
+          <label for="date">date:</label>
+          <input type="text" class="date" name="dateContent" required><br/>
+          <button type="submit" id="submit">Add Note</button>
+        </form>
+    </div>
+
     <div class="notes">
         <div class="addNote">
             <button id="add">+</button><br>
             Add new note
         </div>
+
     </div>
     <script src="main.js"></script>
 </body>
